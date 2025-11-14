@@ -1,4 +1,4 @@
-# Práctica 2 - Componentes Dinámicos en Astro 🚀
+# Práctica 2 - Componentes Dinámicos en Astro
 
 [![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -6,34 +6,34 @@
 
 > **Proyecto académico** desarrollado para demostrar el uso de componentes dinámicos y estructura modular en Astro.
 
-## 📋 Tabla de Contenido
+## Tabla de Contenido
 
-- [Demo](#-demo)
-- [Características](#-características)
-- [Tecnologías](#%EF%B8%8F-tecnologías)
-- [Instalación](#-instalación)
-- [Uso](#-uso)
-- [Estructura](#%EF%B8%8F-estructura-del-proyecto)
-- [Componentes](#-componentes-principales)
-- [Capturas](#-capturas-de-pantalla)
-- [Aprendizajes](#-aprendizajes)
-- [Autor](#-autor)
+- [Demo](#demo)
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Estructura](#estructura-del-proyecto)
+- [Componentes](#componentes-principales)
+- [Capturas](#capturas-de-pantalla)
+- [Aprendizajes](#aprendizajes)
+- [Autor](#autor)
 
-## 🌐 Demo
+## Demo
 
-🔗 **[Ver Demo en Vivo](https://cesarolvrdz.github.io/practica-2-astro-componentes-dinamicos/)**
+**[Ver Demo en Vivo](https://cesarolvrdz.github.io/practica-2-astro-componentes-dinamicos/)**
 
-## ✨ Características
+## Características
 
-- 🧩 **Componentes Dinámicos**: Sistema modular con props reutilizables
-- 📊 **Datos Estructurados**: Gestión centralizada de información de proyectos
-- 🔄 **Renderizado Automático**: Generación de contenido mediante bucles
-- 📱 **Diseño Responsive**: Optimizado para desktop, tablet y móvil
-- 🎨 **UI Moderna**: Sistema de diseño coherente con gradientes y animaciones
-- 🔍 **Filtros Interactivos**: JavaScript vanilla para filtrado por categorías
-- 🧭 **Navegación Dinámica**: Estados activos y menú hamburger en móvil
+- **Componentes Dinámicos**: Sistema modular con props reutilizables
+- **Datos Estructurados**: Gestión centralizada de información de proyectos
+- **Renderizado Automático**: Generación de contenido mediante bucles
+- **Diseño Responsive**: Optimizado para desktop, tablet y móvil
+- **UI Moderna**: Sistema de diseño coherente con gradientes y animaciones
+- **Filtros Interactivos**: JavaScript vanilla para filtrado por categorías
+- **Navegación Dinámica**: Estados activos y menú hamburger en móvil
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **Framework**: [Astro 5.x](https://astro.build/)
 - **Lenguajes**: JavaScript, TypeScript, HTML5, CSS3
@@ -41,7 +41,7 @@
 - **Styling**: CSS moderno con variables y sistema de grid
 - **Assets**: Imágenes SVG vectoriales personalizadas
 
-## 🚀 Instalación
+## Instalación
 
 ```bash
 # Clonar el repositorio
@@ -57,7 +57,7 @@ npm install
 npm run dev
 ```
 
-## 💻 Uso
+## Uso
 
 ```bash
 # Desarrollo
@@ -68,7 +68,7 @@ npm run build        # Generar build
 npm run preview      # Vista previa del build
 ```
 
-## 🗂️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 src/
@@ -89,7 +89,7 @@ src/
     └── images/               # Imágenes SVG de proyectos
 ```
 
-## 🧩 Componentes Principales
+## Componentes Principales
 
 ### ProjectCard.astro
 Componente dinámico que recibe props y renderiza tarjetas de proyectos:
@@ -123,18 +123,18 @@ export const proyectos = [
 ];
 ```
 
-## 📸 Capturas de Pantalla
+## Capturas de Pantalla
 
-### 🏠 Página de Inicio
+### Página de Inicio
 ![Página de Inicio](https://via.placeholder.com/800x400/667eea/ffffff?text=Página+de+Inicio)
 
-### 💼 Proyectos (Renderizado Dinámico)  
+### Proyectos (Renderizado Dinámico)  
 ![Proyectos](https://via.placeholder.com/800x400/f093fb/ffffff?text=Proyectos+Dinámicos)
 
-### 📱 Vista Móvil
+### Vista Móvil
 ![Responsive](https://via.placeholder.com/400x600/764ba2/ffffff?text=Vista+Móvil)
 
-## 📚 Aprendizajes
+## Aprendizajes
 
 ### Conceptos Aplicados
 
@@ -151,7 +151,7 @@ export const proyectos = [
 - ✅ Reutilización de estilos mediante variables CSS
 - ✅ Optimización de rendimiento en componentes
 
-## 👨‍💻 Autor
+## Autor
 
 **César Olivares**
 - GitHub: [@cesarolvrdz](https://github.com/cesarolvrdz)
@@ -160,7 +160,7 @@ export const proyectos = [
 
 ---
 
-### 📝 Notas del Proyecto
+### Notas del Proyecto
 
 Este proyecto fue desarrollado como parte de la **Práctica 2** del curso de Desarrollo Web, demostrando competencias en:
 
@@ -170,4 +170,4 @@ Este proyecto fue desarrollado como parte de la **Práctica 2** del curso de Des
 - Diseño responsive y moderno
 - Documentación técnica profesional
 
-**⭐ Si te gustó este proyecto, dale una estrella!**
+**Si te gustó este proyecto, dale una estrella!**

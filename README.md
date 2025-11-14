@@ -1,6 +1,6 @@
 ```
 
-## 🔧 Personalización
+## Personalización
 
 ### Agregar Nuevos Proyectos
 1. Editar `src/data/proyectos.js`
@@ -12,7 +12,7 @@
 - Estilos específicos en cada componente/página
 - Sistema de colores y espaciados centralizados
 
-## 📚 Reflexiones Técnicas
+## Reflexiones Técnicas
 
 ### 1. ¿En qué se diferencia un componente estático de uno dinámico?
 
@@ -87,7 +87,7 @@ const proyectos = await getProyectos();
 - Cache para optimizar rendimiento
 - Validación de datos recibidos
 
-## 🎯 Problemas Encontrados y Soluciones
+## Problemas Encontrados y Soluciones
 
 ### 1. **Gestión de Estados Activos en Navegación**
 **Problema**: Mantener el estado activo correcto en el menú de navegación.
@@ -105,7 +105,7 @@ const proyectos = await getProyectos();
 **Problema**: Filtrado de proyectos podría ser lento con muchos elementos.
 **Solución**: JavaScript eficiente con métodos de array optimizados y clases CSS para show/hide.
 
-## 🔮 Futuras Mejoras
+## Futuras Mejoras
 
 - **CMS Integration**: Conectar con un headless CMS para gestión de contenido
 - **SEO Optimization**: Meta tags dinámicos y sitemap automático
@@ -114,7 +114,7 @@ const proyectos = await getProyectos();
 - **Testing**: Implementar tests unitarios y de integración
 - **Internationalization**: Soporte multi-idioma
 
-## 👨‍💻 Autor
+## Autor
 
 Desarrollado como parte de la Práctica 2 del curso de Desarrollo Web 2.
 
@@ -130,7 +130,7 @@ Desarrollado como parte de la Práctica 2 del curso de Desarrollo Web 2.
 
 *Este proyecto demuestra competencias en desarrollo frontend moderno, arquitectura de componentes, y mejores prácticas de documentación técnica.*
 
-### 🎯 Objetivos Cumplidos
+### Objetivos Cumplidos
 
 - ✅ **Componentes modulares y reutilizables**: Creación de componentes dinámicos que reciben props
 - ✅ **Contenido dinámico**: Generación automática de contenido desde datos estructurados
@@ -138,7 +138,7 @@ Desarrollado como parte de la Práctica 2 del curso de Desarrollo Web 2.
 - ✅ **Navegación interna**: Sistema de rutas conectadas entre páginas
 - ✅ **Documentación técnica**: README completo con reflexiones
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 src/
@@ -158,7 +158,7 @@ src/
 └── styles/             # Estilos adicionales
 ```
 
-## ⚡ Características Principales
+## Características Principales
 
 ### 1. Componente Dinámico `ProjectCard`
 - **Props recibidas**: `titulo`, `descripcion`, `categoria`, `fecha`, `imagen`, `tecnologias`, `estado`
@@ -189,14 +189,14 @@ El archivo `src/data/proyectos.js` contiene:
 - Menú responsive con hamburger en móvil
 - Enlaces internos funcionales entre todas las páginas
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Astro**: Framework principal para el sitio estático
 - **JavaScript**: Lógica de componentes y datos
 - **CSS3**: Estilos modernos con variables CSS y grid/flexbox
 - **HTML5**: Estructura semántica y accesible
 
-## 🎨 Características Visuales
+## Características Visuales
 
 ### Sistema de Diseño Coherente
 - **Variables CSS**: Colores, espaciados y tipografías consistentes
@@ -209,7 +209,7 @@ El archivo `src/data/proyectos.js` contiene:
 - **Botones**: Primarios, secundarios y variantes de tamaño
 - **Grid System**: Sistema flexible para layouts responsivos
 
-## 🔄 Funcionamiento del Renderizado Dinámico
+## Funcionamiento del Renderizado Dinámico
 
 ### 1. Datos de Origen
 ```javascript
@@ -241,34 +241,34 @@ El componente `ProjectCard` recibe estos datos como props y los renderiza autom�
 - **Escalabilidad**: El sistema funciona con cualquier cantidad de proyectos
 - **Reutilización**: El componente `ProjectCard` puede usarse en diferentes contextos
 
-## 📱 Páginas Implementadas
+## Páginas Implementadas
 
-### 🏠 Inicio (`index.astro`)
+### Inicio (`index.astro`)
 - Hero section con presentación personal
 - Skills grid con tecnologías
 - Estadísticas destacadas
 - Preview de proyectos
 - Call-to-action
 
-### 💼 Proyectos (`proyectos.astro`)
+### Proyectos (`proyectos.astro`)
 - **Renderizado dinámico**: Lista completa de proyectos usando bucles
 - **Filtros interactivos**: Por categoría con JavaScript
 - **Estadísticas**: Resumen de proyectos por estado
 - **Grid responsive**: Adaptable a diferentes tamaños de pantalla
 
-### 📞 Contacto (`contacto.astro`)
+### Contacto (`contacto.astro`)
 - Formulario completo con validaciones
 - Información de contacto organizada
 - Estados de disponibilidad
 - Sección de FAQs
 
-### 👨‍💻 Acerca de (`acerca.astro`)
+### Acerca de (`acerca.astro`)
 - Historia personal y profesional
 - Skills con barras de progreso
 - Valores y filosofía de trabajo
 - Intereses personales
 
-## 🚀 Instrucciones de Uso
+## Instrucciones de Uso
 
 ### Prerequisitos
 - Node.js (versión 18 o superior)
