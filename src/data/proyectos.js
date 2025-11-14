@@ -6,7 +6,7 @@ export const proyectos = [
     descripcion: "Sitio web personal. Incluye galería de proyectos, blog personal y formulario de contacto.",
     categoria: "Desarrollo Web",
     fecha: "2025-09-01",
-    imagen: "/images/portfolio.svg",
+    imagen: "/images/proyectos/proyecto1.jpg",
     tecnologias: ["Astro", "CSS", "JavaScript"],
     estado: "Completado"
   },
@@ -16,10 +16,10 @@ export const proyectos = [
     descripcion: "Aplicación web para gestionar las citas del taller con funcionalidades de crear, editar, eliminar y marcar como completadas.",
     categoria: "Aplicación Web",
     fecha: "2025-02-01",
-    imagen: "/images/task-app.svg",
+    imagen: "/images/proyectos/proyecto2.jpg",
     tecnologias: ["React", "Node.js", "MongoDB"],
     estado: "En desarrollo"
-  }
+  },
 ];
 
 // Función helper para obtener proyectos por categoría
