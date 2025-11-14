@@ -21,7 +21,7 @@
 
 ## 🌐 Demo
 
-🔗 **[Ver Demo en Vivo](https://tu-usuario.github.io/practica-2-astro)** *(Actualizar con tu enlace)*
+🔗 **[Ver Demo en Vivo](https://cesarolvrdz.github.io/practica-2-astro-componentes-dinamicos/)**
 
 ## ✨ Características
 
@@ -45,10 +45,10 @@
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/practica-2-astro.git
+git clone https://github.com/cesarolvrdz/practica-2-astro-componentes-dinamicos.git
 
 # Navegar al directorio
-cd practica-2-astro
+cd practica-2-astro-componentes-dinamicos
 
 # Instalar dependencias
 npm install
@@ -153,10 +153,10 @@ export const proyectos = [
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [tu-perfil](https://linkedin.com/in/tu-perfil)
-- Email: tu-email@ejemplo.com
+**César Olivares**
+- GitHub: [@cesarolvrdz](https://github.com/cesarolvrdz)
+- LinkedIn: [cesar-olivares](https://linkedin.com/in/cesar-olivares)
+- Email: cesar.olivares@ejemplo.com
 
 ---
 

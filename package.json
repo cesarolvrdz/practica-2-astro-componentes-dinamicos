@@ -4,6 +4,12 @@
   "version": "1.0.0",
   "description": "Práctica 2: Componentes dinámicos y estructura modular en Astro",
   "keywords": ["astro", "components", "dynamic-rendering", "portfolio"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cesarolvrdz/practica-2-astro-componentes-dinamicos.git"
+  },
+  "homepage": "https://cesarolvrdz.github.io/practica-2-astro-componentes-dinamicos/",
+  "author": "César Olivares <cesar.olivares@ejemplo.com>",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
