@@ -1,7 +1,9 @@
 {
-  "name": "practica-2--dw2",
+  "name": "practica-2-astro-componentes-dinamicos",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "Práctica 2: Componentes dinámicos y estructura modular en Astro",
+  "keywords": ["astro", "components", "dynamic-rendering", "portfolio"],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

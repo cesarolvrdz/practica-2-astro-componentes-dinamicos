@@ -1,0 +1,37 @@
+{
+  "name": "practica-2-astro",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Práctica 2: Componentes dinámicos y estructura modular en Astro - Proyecto académico para demostrar renderizado dinámico, componentes reutilizables y gestión de datos estructurados",
+  "keywords": [
+    "astro",
+    "components",
+    "dynamic-rendering", 
+    "portfolio",
+    "responsive-design",
+    "javascript",
+    "css3",
+    "academic-project"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-usuario/practica-2-astro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/practica-2-astro/issues"
+  },
+  "homepage": "https://github.com/tu-usuario/practica-2-astro#readme",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/rss": "^4.0.9",
+    "astro": "^5.15.6",
+    "typescript": "^5.7.2"
+  }
+}
