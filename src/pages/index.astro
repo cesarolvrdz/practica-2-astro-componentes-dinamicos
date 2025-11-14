@@ -1,49 +1,411 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout title="Inicio - Mi Portfolio" currentPage="home">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Hola, soy <span class="highlight">Ces Olvera</span>
+          </h1>
+          <p class="hero-description">
+            Creo experiencias digitales únicas y funcionales, utilizando las tecnologias mas apropiadas para cada proyecto. 
+            Especializado en desarrollo frontend y backend.
+          </p>
+          <div class="hero-actions">
+            <a href="/proyectos" class="btn btn-primary btn-lg">Ver mis proyectos</a>
+            <a href="/contacto" class="btn btn-secondary btn-lg">Contactarme</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="avatar">
+            <div class="avatar-placeholder">
+              <span class="avatar-icon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills">
+    <div class="container">
+      <h2 class="text-center">Tecnologías que domino</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>Frontend</h3>
+          <p>React, Vue.js, Astro, TypeScript, CSS3, HTML5</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔧</div>
+          <h3>Backend</h3>
+          <p>Node.js, Express.js, Python, PostgreSQL, MongoDB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Proyectos completados</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1+</div>
+          <div class="stat-label">Año de experiencia</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Tecnologías dominadas</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Projects Preview -->
+  <section class="recent-projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Proyectos destacados</h2>
+        <p>Una muestra de mi trabajo más reciente</p>
+        <a href="/proyectos" class="btn btn-primary">Ver todos los proyectos</a>
+      </div>
+      
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Tienes un proyecto en mente?</h2>
+        <p>Hablemos sobre cómo puedo ayudarte a convertir tu idea en realidad</p>
+        <a href="/contacto" class="btn btn-primary btn-lg">Iniciar conversación</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--space-3xl) 0;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+    max-width: 1200px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .avatar-icon {
+    font-size: 4rem;
+  }
+
+  /* Skills Section */
+  .skills {
+    padding: var(--space-3xl) 0;
+    background: var(--bg-primary);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .skills h2 {
+    margin-bottom: var(--space-2xl);
+    color: var(--text-primary);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .skill-card {
+    background: white;
+    padding: var(--space-xl);
+    border-radius: var(--rounded-xl);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-light);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .skill-icon {
+    font-size: 3rem;
+    margin-bottom: var(--space-md);
+    display: block;
+  }
+
+  .skill-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+  }
+
+  .skill-card p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* Stats Section */
+  .stats {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .stat-card {
+    text-align: center;
+    color: white;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--space-sm);
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  /* Recent Projects Section */
+  .recent-projects {
+    padding: var(--space-3xl) 0;
+    background: var(--bg-primary);
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .section-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .projects-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .project-preview-card {
+    background: white;
+    border-radius: var(--rounded-xl);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-light);
+  }
+
+  .project-preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .project-preview-image {
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .placeholder-image {
+    font-size: 4rem;
+  }
+
+  .project-preview-content {
+    padding: var(--space-lg);
+  }
+
+  .project-preview-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+  }
+
+  .project-preview-content p {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .project-tech {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* CTA Section */
+  .cta {
+    padding: var(--space-3xl) 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    text-align: center;
+  }
+
+  .cta-content {
+    color: white;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xl);
+    opacity: 0.9;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.125rem;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .avatar {
+      width: 200px;
+      height: 200px;
+    }
+
+    .avatar-icon {
+      font-size: 3rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-preview {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-content p {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: var(--space-2xl) 0;
+    }
+
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+</style>

@@ -1,0 +1,415 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { proyectos, getCategorias } from '../data/proyectos.js';
+
+// Obtener todas las categorías únicas para el filtro
+const categorias = getCategorias();
+---
+
+<Layout title="Proyectos - Mi Portfolio" currentPage="proyectos">
+  <!-- Header Section -->
+  <section class="projects-header">
+    <div class="container">
+      <div class="header-content">
+        <h1>Mis Proyectos</h1>
+        <p class="header-description">
+          Una colección de proyectos que muestran mi experiencia en desarrollo web,
+          desde aplicaciones frontend hasta sistemas backend completos.
+        </p>
+      </div>
+      
+      <!-- Filtros de categoría -->
+      <div class="filter-section">
+        <h3>Filtrar por categoría:</h3>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="all">
+            Todos ({proyectos.length})
+          </button>
+          {categorias.map(categoria => {
+            const count = proyectos.filter(p => p.categoria === categoria).length;
+            return (
+              <button class="filter-btn" data-category={categoria}>
+                {categoria} ({count})
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="projects-section">
+    <div class="container">
+      <div class="projects-grid" id="projects-grid">
+        {proyectos.map(proyecto => (
+          <div class="project-item" data-category={proyecto.categoria}>
+            <ProjectCard
+              id={proyecto.id}
+              titulo={proyecto.titulo}
+              descripcion={proyecto.descripcion}
+              categoria={proyecto.categoria}
+              fecha={proyecto.fecha}
+              imagen={proyecto.imagen}
+              tecnologias={proyecto.tecnologias}
+              estado={proyecto.estado}
+            />
+          </div>
+        ))}
+      </div>
+
+      <!-- Empty state cuando no hay resultados -->
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <div class="empty-content">
+          <div class="empty-icon">🔍</div>
+          <h3>No se encontraron proyectos</h3>
+          <p>Intenta seleccionar una categoría diferente</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="project-stats">
+    <div class="container">
+      <h2>Estadísticas de Proyectos</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-info">
+            <div class="stat-number">{proyectos.length}</div>
+            <div class="stat-label">Total de Proyectos</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🏷️</div>
+          <div class="stat-info">
+            <div class="stat-number">{categorias.length}</div>
+            <div class="stat-label">Categorías</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <div class="stat-number">{proyectos.filter(p => p.estado === 'Completado').length}</div>
+            <div class="stat-label">Completados</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-info">
+            <div class="stat-number">{proyectos.filter(p => p.estado === 'En desarrollo').length}</div>
+            <div class="stat-label">En Desarrollo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="projects-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>¿Interesado en trabajar conmigo?</h2>
+        <p>Estos proyectos representan mi enfoque y experiencia. Hablemos sobre tu próximo proyecto.</p>
+        <a href="/contacto" class="btn btn-primary btn-lg">Contactar ahora</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Projects Header */
+  .projects-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: var(--space-3xl) 0;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .header-content {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .projects-header h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--space-lg);
+  }
+
+  .header-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Filter Section */
+  .filter-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--space-lg);
+    border-radius: var(--rounded-xl);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .filter-section h3 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+    color: white;
+  }
+
+  .filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--rounded-md);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+  }
+
+  .filter-btn.active {
+    background: rgba(255, 255, 255, 0.25);
+    font-weight: 600;
+  }
+
+  /* Projects Grid */
+  .projects-section {
+    padding-bottom: var(--space-3xl);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .project-item {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .project-item.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: var(--space-3xl) 0;
+  }
+
+  .empty-content {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .empty-icon {
+    font-size: 4rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+  }
+
+  .empty-state p {
+    color: var(--text-secondary);
+    margin-bottom: 0;
+  }
+
+  /* Project Stats */
+  .project-stats {
+    background: var(--bg-primary);
+    padding: var(--space-3xl) 0;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .project-stats h2 {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    color: var(--text-primary);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .stat-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: var(--rounded-xl);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .stat-info {
+    flex-grow: 1;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-xs);
+  }
+
+  /* Projects CTA */
+  .projects-cta {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: var(--space-3xl) 0;
+    text-align: center;
+  }
+
+  .cta-content {
+    color: white;
+  }
+
+  .cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-content p {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xl);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .projects-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .header-description {
+      font-size: 1.125rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-content p {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .filter-buttons {
+      flex-direction: column;
+    }
+
+    .filter-btn {
+      text-align: center;
+    }
+  }
+</style>
+
+<script>
+  // Funcionalidad de filtrado
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    const emptyState = document.getElementById('empty-state');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = (button as HTMLElement).dataset.category;
+
+        // Actualizar estado activo de botones
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        // Filtrar proyectos
+        let visibleCount = 0;
+
+        projectItems.forEach(item => {
+          const itemCategory = (item as HTMLElement).dataset.category;
+          
+          if (category === 'all' || itemCategory === category) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        // Mostrar/ocultar empty state
+        if (emptyState) {
+          if (visibleCount === 0) {
+            emptyState.style.display = 'block';
+          } else {
+            emptyState.style.display = 'none';
+          }
+        }
+      });
+    });
+  });
+</script>
